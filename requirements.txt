@@ -1,1 +1,7 @@
 flask==1.0.2
+click==7.1.2
+itsdangerous==2.0
+Werkzeug==2.0
+Jinja2==3.0
+colorama; platform_system == “Windows”
+MarkupSafe==2.0
