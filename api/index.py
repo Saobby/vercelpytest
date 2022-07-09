@@ -2,8 +2,13 @@ from flask import *
 app = Flask(__name__)
 
 @app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
+@app.route('/')
 def catch_all(path):
-    if path == "/venti":
-        return send_file("venti_origin.png")
-    return Response("<h1>Flask</h1><p>You visited: /%s</p>" % (path), mimetype="text/html")
+#     if path == "/venti":
+#         return send_file("venti_origin.png")
+    return "Hello World"
+
+@app.route('/venti')
+def test():
+    return send_file("venti_origin.png")
+
