@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/', defaults={'path': ''})
 @app.route('/')
-def catch_all(path):
+def catch_all():
 #     if path == "/venti":
 #         return send_file("venti_origin.png")
     return "Hello World"
