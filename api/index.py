@@ -20,8 +20,11 @@ def api_colorful_venti():
         r, g, b = int(rgb[0]), int(rgb[1]), int(rgb[2])
         if not (0 <= r <= 255 and 0 <= g <= 255 and 0 <= b <= 255):
             return "Invalid color", 400
-    green_part = Image.open("venti_green.png")
-    origin = Image.open("venti_origin.png")
+    try:
+        green_part = Image.open("venti_green.png")
+        origin = Image.open("venti_origin.png")
+    except Exception as err:
+        return str(err)
     for y in range(origin.size[1]):
         for x in range(origin.size[0]):
             nr, ng, nb, na = green_part.getpixel((x, y))
